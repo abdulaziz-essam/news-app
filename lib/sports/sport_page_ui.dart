@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
-import "./sport_cards.dart";
+
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
+  const App({Key? key}) : super(key: key);
+  @override
+  State<App> createState() => Sport();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,19 +15,20 @@ class App extends StatelessWidget {
         brightness: Brightness.light,
         scaffoldBackgroundColor: const Color.fromRGBO(239, 238, 239, 1.0),
       ),
-      home: const Sport(),
+
     );
   }
 }
 
-class Sport extends StatelessWidget {
-  const Sport({Key? key}) : super(key: key);
+class Sport extends State <App> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: AnimationLimiter(
         child: ListView.builder(
-          itemCount: 20,
+          itemCount: 4,
           itemBuilder: (BuildContext context, int index) {
             return AnimationConfiguration.staggeredList(
               position: index,
@@ -41,15 +45,25 @@ class Sport extends StatelessWidget {
                         ),
                         borderRadius: const BorderRadius.all(Radius.circular(12)),
                       ),
-                      child: const SizedBox(
-                        width: 300,
-                        height: 100,
-                        child: Center(child: Text('Outlined Card')),
+                      child:  SizedBox(
+                        width:1000,
+                        height: 500,
+                        child:  Column(
+
+                          children: [
+
+                            Image.asset("images/arg.png", width: 600, height: 400,  fit: BoxFit.cover,alignment: Alignment.centerLeft)
+                      ,
+                            Text('grdgrdesgderssder Card'),
+
+                          ],
+                        )
+                      ),
                       ),
                     ),
                   )
                   ),
-                ),
+
               );
 
           },

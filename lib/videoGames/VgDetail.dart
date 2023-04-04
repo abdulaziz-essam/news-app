@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import "./sportData.dart";
-class SportNews extends StatelessWidget {
-  const SportNews({super.key});
+import "./VgData.dart";
+
+class VgNews extends StatelessWidget {
+  const VgNews({super.key});
 
   static const String _title = 'Flutter Code Sample';
 
@@ -29,16 +30,17 @@ class _MyAppState extends State<News> {
   @override
 
   Widget build(BuildContext context) {
-    //spNews will have data from sportData.dart file
+    //vgNews will have data from vgData.dart file
 
-  SpNews spNews=new SpNews();
-  List news=spNews.getData();
+    SpNews vgNews=new SpNews();
+ List news=vgNews.getData();
+    // List news=vgNews.ge
     return Column(
       children: [
         Image.asset("images/arg.png", width: 400, height: 400),
 
         Center(
-          
+
           child: Text(news[0]),
         ),
       ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/sports/sport.dart';
+import 'package:news_app/sports/sport_page_ui.dart';
 import 'sports/sportInfoWidget.dart';
+import 'videoGames/vg_list_ui.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        '/': (context) => SportNews(),
+        '/': (context) => VgUi(),
 
       },
     );
